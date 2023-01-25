@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: "Jetbrains Mono", monospace;
+}
+
+/* **hero container** */
+.hero {
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 80vh;
+  padding-top: 15vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title {
+  font-size: 3.1em;
+  font-weight: 400;
+  margin-bottom: 0.4em;
+  letter-spacing: 0.1em;
+}
+
+.intro-para {
+  text-align: justify;
+  font-size: 1.1em;
+}
+
+h1,
+p {
+  color: #ffff;
+  font-family: "jetbrains Mono", monospace;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.single-title {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.btn-mail {
+  color: #b9b6b2;
+  padding: 1em;
+  border-radius: 1.7em;
+  font-weight: 500;
+  font-size: 1.1em;
+  border: 2px solid rebeccapurple;
+  background: rgb(37 39 38 / 50%);
+}
+
+/* **protfolio root** */
+
+.info-content {
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+  background-color: #222;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+}
+
+.portfolio-root {
+  position: relative;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: minmax(100px, auto);
+  margin: 40px;
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+}
+
+.portfolio-root .ps {
+  position: relative;
+  color: #929796;
+  background: #333;
+  display: grid;
+  font-size: 20px;
+  place-items: center;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.protfolio-elem-2,
+.protfolio-elem-4 
+{
+  text-align: center;
+}
+
+.portfolio-root {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 4em 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "elem1 elem1 elem2 elem3"
+    "elem4 elem5 elem2 elem6"
+    "elem4 elem7 elem7 elem8";
+  grid-auto-columns: minmax(10em, auto);
+  grid-auto-rows: minmax(14em, auto);
+  grid-gap: 0.5em;
+  gap: 0.5em;
+  transition: filter 0.7s ease-in;
+}
+.protfolio-elem-1 {
+  grid-column: span 2;
+}
+.protfolio-elem-2 {
+  grid-row: span 2;
+}
+.protfolio-elem-4 {
+  grid-row: span 2;
+}
+.protfolio-elem-7 {
+  grid-column: span 2;
+}
+
+.ps {
+  border-radius: 13px;
+}
+
+.single-title {
+  text-align: left;
+}
+
+.portfolio-elem-separator {
+  background: var(--color-dark-font);
+  width: 0;
+  height: 0.2em;
+  border-radius: 2px;
+  transition: width 0.3s ease-in;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
+}
+
+.portfolio-elem-wrapper {
+  /* add caret color  */
+}
