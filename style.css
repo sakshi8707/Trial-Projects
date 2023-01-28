@@ -5,7 +5,6 @@ body {
   font-family: "Jetbrains Mono", monospace;
 }
 
-/* **hero container** */
 .hero {
   box-sizing: border-box;
   margin: 0 auto;
@@ -15,19 +14,16 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 .hero-title {
   font-size: 3.1em;
   font-weight: 400;
   margin-bottom: 0.4em;
   letter-spacing: 0.1em;
 }
-
 .intro-para {
   text-align: justify;
   font-size: 1.1em;
 }
-
 h1,
 p {
   color: #ffff;
@@ -35,24 +31,19 @@ p {
   font-size: 1.2rem;
   line-height: 1.5rem;
 }
-
 .single-title {
   font-size: 1.5em;
   font-weight: 500;
 }
-
 .btn-mail {
   color: #b9b6b2;
   padding: 1em;
   border-radius: 1.7em;
   font-weight: 500;
   font-size: 1.1em;
-  border: 2px solid rebeccapurple;
+  border: rebeccapurple solid 2px;
   background: rgb(37 39 38 / 50%);
 }
-
-/* **protfolio root** */
-
 .info-content {
   font-family: "Rubik", sans-serif;
   min-height: 100vh;
@@ -61,7 +52,6 @@ p {
   align-self: center;
   display: flex;
 }
-
 .portfolio-root {
   position: relative;
   max-width: 100%;
@@ -70,65 +60,53 @@ p {
   grid-template-rows: minmax(100px, auto);
   margin: 40px;
   grid-auto-flow: dense;
-  grid-gap: 10px;
+  gap: 10px;
 }
-
 .portfolio-root .ps {
   position: relative;
   color: #929796;
-  background: #333;
   display: grid;
   font-size: 20px;
   place-items: center;
   color: #fff;
   transition: 0.5s;
 }
-
-.protfolio-elem-2,
-.protfolio-elem-4 
-{
+.portfolio-elem-2,
+.portfolio-elem-4 {
   text-align: center;
 }
-
 .portfolio-root {
   width: 80vw;
   margin: 0 auto;
   padding: 4em 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    "elem1 elem1 elem2 elem3"
-    "elem4 elem5 elem2 elem6"
-    "elem4 elem7 elem7 elem8";
+  grid-template-areas: "elem1 elem1 elem2 elem3" "elem4 elem5 elem2 elem6" "elem4 elem7 elem7 elem8";
   grid-auto-columns: minmax(10em, auto);
   grid-auto-rows: minmax(14em, auto);
-  grid-gap: 0.5em;
+  gap: 0.5em;
   gap: 0.5em;
   transition: filter 0.7s ease-in;
 }
-.protfolio-elem-1 {
+.portfolio-elem-1 {
   grid-column: span 2;
 }
-.protfolio-elem-2 {
+.portfolio-elem-2 {
   grid-row: span 2;
 }
-.protfolio-elem-4 {
+.portfolio-elem-4 {
   grid-row: span 2;
 }
-.protfolio-elem-7 {
+.portfolio-elem-7 {
   grid-column: span 2;
 }
-
 .ps {
   border-radius: 13px;
 }
-
 .single-title {
   text-align: left;
 }
-
 .portfolio-elem-separator {
-  background: var(--color-dark-font);
   width: 0;
   height: 0.2em;
   border-radius: 2px;
@@ -136,7 +114,88 @@ p {
   margin-top: 0.3em;
   margin-bottom: 1em;
 }
-
 .portfolio-elem-wrapper {
-  /* add caret color  */
+  border-radius: 7px;
+}
+.portfolio-elem {
+  padding: 1rem 2rem 1rem 2rem;
+}
+.portfolio-vertical {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.single-title {
+  border-bottom: 2px solid;
+}
+.portfolio-elem-overlay {
+  padding-left: 1em;
+  border-radius: 7px;
+  z-index: 6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.portfolio-elem-separator {
+  width: 0;
+  height: 0.2em;
+  border-radius: 2px;
+  transition: width 0.3s ease-in;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
+}
+.portfolio-elem-2 {
+  grid-area: elem2;
+}
+.portfolio-elem-1 {
+  grid-area: elem1;
+}
+.ps {
+  --color-dark-gradient: linear-gradient(
+    31deg,
+    rgb(0, 0, 0, 0.7) 7%,
+    rgb(80, 80, 80, 0.7) 65%,
+    hsl(0 0% 62.7% / 0.7)
+  );
+}
+.portfolio-elem:hover {
+  cursor: pointer;
+}
+/* **footer section** */
+.footer-root {
+  color: white;
+  border-top: 1px solid;
+  width: 80vh;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+.social-row {
+  gap: 2.2rem;
+}
+.social-row {
+  width: 100%;
+  font-size: 2em;
+}
+.footer-mesg {
+  font-family: "Jetbrains Mono", monospace;
+}
+.txt,
+.portfolio-vertical-elem {
+  font-family: "Jetbrains Mono", monospace;
+}
+.ps {
+  box-shadow: 20px 20px 50px rgb(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgb(255, 255, 255, 0.1);
+  overflow: hidden;
+  border-top: 1px solid rgb(255, 255, 255, 0.5);
+  border-left: 1px solid rgb(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
 }
