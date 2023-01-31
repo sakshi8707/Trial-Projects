@@ -4,7 +4,61 @@ body {
   height: 100%;
   font-family: "Jetbrains Mono", monospace;
 }
+/* **type writer** */
+.type-writer .static-txt {
+}
 
+.type-writer .dynamic-txts {
+  margin-left: -28px;
+  /* margin-left: 15px; */
+  height: 90px;
+  line-height: 78px;
+  overflow: hidden;
+}
+.dynamic-txts li {
+  list-style: none;
+  position: relative;
+  top: 0;
+  animation: slide 13s steps(4) infinite;
+}
+.dynamic-txts li {
+  color: #ffff;
+  font-size: 3.1em;
+  font-weight: 400;
+  margin-bottom: 0.4em;
+  letter-spacing: 0.1em;
+}
+
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+
+.dynamic-txts li span {
+  position: relative;
+}
+.dynamic-txts li span::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  height: 120%;
+  width: 100%;
+  background: black;
+  border-left: 4px solid rebeccapurple;
+  animation: typing 1.5s steps(9) infinite;
+  /* animation-play-state: paused */
+  animation-duration: ms;
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+
+/* ---------------------------------------- */
 .hero {
   box-sizing: border-box;
   margin: 0 auto;
@@ -15,7 +69,7 @@ body {
   flex-direction: column;
 }
 .hero-title {
-  font-size: 3.1em;
+  font-size: -1.1em;
   font-weight: 400;
   margin-bottom: 0.4em;
   letter-spacing: 0.1em;
@@ -47,7 +101,6 @@ p {
 .info-content {
   font-family: "Rubik", sans-serif;
   min-height: 100vh;
-  background-color: #222;
   justify-content: center;
   align-self: center;
   display: flex;
@@ -185,6 +238,7 @@ p {
 }
 .footer-mesg {
   font-family: "Jetbrains Mono", monospace;
+  font-size: 1.2rem;
 }
 .txt,
 .portfolio-vertical-elem {
