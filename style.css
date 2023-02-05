@@ -5,59 +5,37 @@ body {
   font-family: "Jetbrains Mono", monospace;
 }
 /* **type writer** */
-.type-writer .static-txt {
+.type-writer {
 }
-
-.type-writer .dynamic-txts {
-  margin-left: -28px;
-  /* margin-left: 15px; */
-  height: 90px;
-  line-height: 78px;
-  overflow: hidden;
-}
-.dynamic-txts li {
-  list-style: none;
+.container .text {
   position: relative;
-  top: 0;
-  animation: slide 13s steps(4) infinite;
+  font-weight: 300;
+  font-size: 4.8vh;
+  margin-left: -8px;
+  color: #fff;
+  font-family: "jetbrains Mono", monospace;
 }
-.dynamic-txts li {
-  color: #ffff;
-  font-size: 3.1em;
-  font-weight: 400;
-  margin-bottom: 0.4em;
-  letter-spacing: 0.1em;
-}
-
-@keyframes slide {
-  100% {
-    top: -360px;
-  }
-}
-
-.dynamic-txts li span {
-  position: relative;
-}
-.dynamic-txts li span::after {
-  content: " ";
+.text.sec-text::before {
+  content: "";
   position: absolute;
+  top: 0;
   left: 0;
-  height: 120%;
+  height: 100%;
   width: 100%;
   background: black;
   border-left: 4px solid rebeccapurple;
-  animation: typing 1.5s steps(9) infinite;
-  /* animation-play-state: paused */
-  animation-duration: ms;
+  animation: animate 4s steps(12) infinite;
 }
 
-@keyframes typing {
-  100% {
+@keyframes animate {
+  40%,
+  60% {
     left: 100%;
-    margin: 0 -35px 0 35px;
+  }
+  100% {
+    left: 0%;
   }
 }
-
 /* ---------------------------------------- */
 .hero {
   box-sizing: border-box;
@@ -69,7 +47,7 @@ body {
   flex-direction: column;
 }
 .hero-title {
-  font-size: -1.1em;
+  font-size: -1.1vh;
   font-weight: 400;
   margin-bottom: 0.4em;
   letter-spacing: 0.1em;
@@ -86,7 +64,7 @@ p {
   line-height: 1.5rem;
 }
 .single-title {
-  font-size: 1.5em;
+  font-size: 3.2vh;
   font-weight: 500;
 }
 .btn-mail {
@@ -119,7 +97,7 @@ p {
   position: relative;
   color: #929796;
   display: grid;
-  font-size: 20px;
+  font-size: 2.2vh;
   place-items: center;
   color: #fff;
   transition: 0.5s;
@@ -143,6 +121,7 @@ p {
 }
 .portfolio-elem-1 {
   grid-column: span 2;
+  background: lightblue;
 }
 .portfolio-elem-2 {
   grid-row: span 2;
@@ -238,7 +217,8 @@ p {
 }
 .footer-mesg {
   font-family: "Jetbrains Mono", monospace;
-  font-size: 1.2rem;
+  font-size: 2.2vh;
+  /* font-size: 1.2rem; */
 }
 .txt,
 .portfolio-vertical-elem {
@@ -252,4 +232,12 @@ p {
   border-top: 1px solid rgb(255, 255, 255, 0.5);
   border-left: 1px solid rgb(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
+}
+/* **media query** */
+
+@media only screen and (max-width: 600px) {
+  .entire-container {
+    /* background-color: red; */
+    text-align: left; 
+  }
 }
