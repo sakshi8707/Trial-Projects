@@ -121,7 +121,6 @@ p {
 }
 .portfolio-elem-1 {
   grid-column: span 2;
-  background: lightblue;
 }
 .portfolio-elem-2 {
   grid-row: span 2;
@@ -188,14 +187,14 @@ p {
 .portfolio-elem-1 {
   grid-area: elem1;
 }
-.ps {
+/* .ps {
   --color-dark-gradient: linear-gradient(
     31deg,
     rgb(0, 0, 0, 0.7) 7%,
     rgb(80, 80, 80, 0.7) 65%,
     hsl(0 0% 62.7% / 0.7)
   );
-}
+} */
 .portfolio-elem:hover {
   cursor: pointer;
 }
@@ -233,11 +232,99 @@ p {
   border-left: 1px solid rgb(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
 }
+
+/* **navbar** */
+.navbar-top {
+  background: rebeccapurple;
+  position: fixed;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  width: calc(100% - 3.55em);
+  height: 3.3em;
+  z-index: 7;
+  transform: translateX(-100vw);
+  transition: transform 2s linear;
+  transition: transform var(--nav-anim-time) linear;
+}
+/* .navbar-right {
+background: white;
+justify-content: center;
+display: flex;
+width: calc(100% - 3.55em);
+height: 3.3em;
+flex-direction: column;
+transform: translateX();
+} */
+
+.navbar-right {
+  background: rebeccapurple;
+  position: fixed;
+  justify-content: space-between;
+  display: flex;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 3.55em;
+  z-index: 7;
+  background: var(--color-dark-accent);
+  color: var(--color-dark-bg);
+  transition: transform var(--nav-anim-time) linear;
+}
+.navbar-open-icon{
+  display: block;
+}
+
+
+
+.navbar-core{
+  text-align: center;
+  top: 0;
+  right: 0;
+  z-index: 8;
+  position: fixed;
+  padding: 3.5px;
+}
+.tooltip .tooltiptext-left {
+  right: 100%;
+  z-index: 7;
+} 
+.tooltip .tooltiptext-bottom, .tooltip .tooltiptext-left{
+  visibility: hidden;
+  width: 100px;
+  font-size: .7em;
+  font-weight: 500;
+  text-align: center;
+  justify-content: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+}
+
 /* **media query** */
 
 @media only screen and (max-width: 600px) {
   .entire-container {
-    /* background-color: red; */
     text-align: left; 
+  }
+  
+}
+/* 883.667px */
+/* @media only screen and (max-width: 768px) {
+  .portfolio-elem-1 {
+    grid-column: span 1;
+    background-color: red;
+  }
+} */
+
+
+@media screen and (max-width: 600px) {
+  .portfolio-elem-1 {
+    font-size: 800px;
+    background: red;
   }
 }
