@@ -1,0 +1,152 @@
+:root {
+    --nav-anim-time: 2s;
+  }
+  
+  .navbar-root.view-on {
+    display: block;
+  }
+  
+  .navbar-root.view-off {
+    display: none;
+  }
+  
+  .navbar-top {
+    position: fixed;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    width: calc(100% - 3.55em);
+    height: 3.3em;
+    z-index: 7;
+    background: var(--color-dark-accent);
+    color: var(--color-dark-bg);
+    transform: translateX(-100vw);
+    transition: transform var(--nav-anim-time) linear;
+  }
+  
+
+  
+  .navbar-core {
+    text-align: center;
+    padding: 3.5px;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 8;
+  }
+  .navbar-core{
+  
+  }
+  .navbar-core.view-off {
+    display: none;
+  }
+  
+  .navbar-core-icon-wrapper {
+    color: var(--color-dark-accent);
+    transform: rotate(-360deg);
+    transition: transform var(--nav-anim-time) linear,
+      color var(--nav-anim-time) step-end;
+    padding: 0 4px;
+  }
+  
+  .navbar-core-icon:hover,
+  .navbar-theme-icon:hover,
+  .navbar-chat-icon:hover {
+    cursor: pointer;
+  }
+  
+  .navbar-core-icon.navbar-disabled:hover {
+    cursor: not-allowed;
+  }
+  
+  .navbar-right {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 3.55em;
+    z-index: 7;
+    background: var(--color-dark-accent);
+    color: var(--color-dark-bg);
+    transform: translateY(-100vh);
+    transition: transform var(--navbar-anim-time) linear;
+  }
+  
+  .navbar-page-elem-wrapper {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .navbar-theme-icon {
+    padding-bottom: 0.5em;
+  }
+  
+  .tooltip {
+    position: relative;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext-left,
+  .tooltip .tooltiptext-bottom {
+    visibility: hidden;
+    width: 100px;
+    font-size: 0.7em;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+  }
+  
+  .tooltip .tooltiptext-left {
+    right: 100%;
+    z-index: 7;
+  }
+  
+  .tooltip .tooltiptext-bottom {
+    top: 135%;
+    left: -110%;
+    z-index: 7;
+  }
+  
+  .tooltip .tooltiptext-left.theme-dark,
+  .tooltip .tooltiptext-bottom.theme-dark {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-font);
+  }
+  
+  .tooltip .tooltiptext-left.theme-light,
+  .tooltip .tooltiptext-bottom.theme-light {
+    background-color: var(--color-light-bg);
+    color: var(--color-light-font);
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext-left,
+  .tooltip:hover .tooltiptext-bottom {
+    visibility: visible;
+  }
+  
+  @media only screen and (max-width: 640px) {
+    .navbar-right {
+      display: none;
+    }
+    .navbar-top {
+      width: 100vw;
+    }
+  }
+  
