@@ -1,17 +1,26 @@
+// **Typewirter**
 const text = document.querySelector(".sec-text");
+const Text = document.querySelector(".text");
 
-const textLoad = () => {
-  setTimeout(() => {
-    text.textContent = "Hi.";
-  }, 0);
-  setTimeout(() => {
-    text.textContent = "नमस्ते |";
-    // text.textContent = "guten tag.";
-  }, 4000);
-  setTimeout(() => {
-    text.textContent = "bonjour.";
-  }, 8000);
-};
+const textt = "Hi.";
+const speed = 100;
+
+function typeWriter() {
+  let charIndex = 0;
+  const typewriter = document.getElementById("typewriter");
+  typewriter.innerHTML = "";
+  const typingInterval = setInterval(() => {
+    if (charIndex < textt.length) {
+      typewriter.innerHTML += textt.charAt(charIndex);
+      charIndex++;
+    } else {
+      clearInterval(typingInterval);
+      setTimeout(typeWriter, 2000);
+    }
+  }, speed);
+}
+
+typeWriter();
 
 // changing button text on hover in JavaScript e
 
@@ -75,7 +84,7 @@ const CloseBtn = document.querySelectorAll(".modal-close-btn");
 const overlay = document.querySelector(".modal-image-overlay");
 const OpenBtn = document.querySelectorAll(".ps");
 const sunBtn = document.querySelector(".fa-sun");
-const MOONBtn = document.querySelector(".fa-moon");
+// const MOONBtn = document.querySelector(".fa-moon");
 
 function showModal() {
   this.style.display = "block";
@@ -137,9 +146,6 @@ const lightMode = function () {
   btnMail.classList.toggle("theme-light");
 };
 
-textLoad();
-setInterval(textLoad, 12000);
-
 const themeLight = document.querySelectorAll(".theme-light");
 const portfolioElemSeparator = document.querySelectorAll(
   ".portfolio-elem-separator"
@@ -153,6 +159,8 @@ const navBar = document.querySelector(
 );
 const changedBtn = document.querySelector(".fa-moon");
 const closeModal = document.querySelector(".close-modal");
+const caret = document.querySelector(".text");
+console.log(caret);
 
 const applyLightTheme = function () {
   document.body.style.background = "var(--color-light-bg)";
@@ -186,6 +194,11 @@ const applyLightTheme = function () {
   navBar.style.background = "var(--color-light-accent)";
   navBar.style.color = "var(--color-light-accent)";
   navRight.style.background = "var(--color-light-accent)";
+
+  changedBtn.classList.add("fa-sun");
+  changedBtn.classList.remove("fa-moon");
+  plusIcon.style.color = "var(--color-light-accent)";
+
 };
 
 const applyDarkTheme = function () {
@@ -221,24 +234,31 @@ const applyDarkTheme = function () {
   navBar.style.background = "var(--color-dark-accent)";
   navRight.style.background = "var(--color-dark-accent)";
   navBar.style.color = "var(--color-dark-accent)";
+
+  changedBtn.classList.add("fa-moon");
+  changedBtn.classList.remove("fa-sun");
+  // faPlus.classList.toggle("fa-times");
+  plusIcon.style.color = "var(--color-dark-accent)";
+
+  //for typewriter border
+
+
 };
 
 let isThemeActive = false;
+
 moonBtn.addEventListener("click", function () {
   if (isThemeActive) {
-    //applying dark theme property
+    // Applying dark theme property
     applyDarkTheme();
-    changedBtn.classList.add("fa-moon");
-    changedBtn.classList.remove("fa-sun");
-    // faPlus.classList.toggle("fa-times");
-    plusIcon.style.color = "var(--color-dark-accent)";
+    document.body.style.backgroundColor = "var(--color-dark-bg)";
+    Text.style.borderRightColor = "var(--color-dark-accent)";
     isThemeActive = false;
   } else {
-    //applying light theme property
+    // Applying light theme property
     applyLightTheme();
-    changedBtn.classList.add("fa-sun");
-    changedBtn.classList.remove("fa-moon");
-    plusIcon.style.color = "var(--color-light-accent)";
+    document.body.style.backgroundColor = "var(--color-light-bg)";
     isThemeActive = true;
+    Text.style.borderRightColor = "var(--color-light-accent)";
   }
 });
